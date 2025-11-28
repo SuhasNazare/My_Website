@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bio-data | Sri Akshaya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .bio {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .details h2 {
+      margin-top: 0;
+      color: #1e3a8a;
+    }
+    .details p {
+      margin: 0.8rem 0;
+      font-size: 1.1rem;
+    }
+    .section-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    h3 {
+      color: #1e3a8a;
+      border-bottom: 3px solid #1e40af;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #e0e7ff;
+      color: #1e3a8a;
+      font-weight: bold;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.8rem;
+    }
+    .objective {
+      background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+      padding: 1.5rem;
+      border-left: 5px solid #1e40af;
+      margin-bottom: 1rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .skill-category {
+      background: #f8fafc;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #1e40af;
+    }
+    footer {
+      text-align: center;
+      background-color: #1e3a8a;
+      color: white;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .social-icons a:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #7c6cff;
+    }
+    @media (max-width: 768px) {
+      .bio {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+      }
+      section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SUHAS N M</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="resume.html">Full Resume</a>
+    </nav>
+  </header>
+
+  <section class="bio">
+    <img src="images/suhas_photo.jpg" alt="Suhas Profile" class="profile-pic" />
+    <div class="details">
+      <h2>Suhas N M</h2>
+      <p><strong>Date of Birth:</strong> 26 June 2005</p>
+      <p><strong>Gender:</strong> Male</p>
+      <p><strong>Nationality:</strong> Indian</p>
+      <p><strong>Address:</strong> Electronic City, Bangalore-560099</p>
+      <p><strong>Phone:</strong> +91 7892331225</p>
+      <p><strong>Email:</strong> sas633111@gmail.com</p>
+      <p><strong>Languages:</strong> English, Kannada, Hindi, Marathi, Tamil, Telugu</p>
+      <p><strong>Hobbies:</strong>Web Development</p>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h3>🎯 Career Objective</h3>
+    <div class="objective">
+      <p>To leverage my technical knowledge and problem-solving skills as a proactive engineering student, contributing to innovative projects while gaining hands-on experience in Web development and Networking field.</p>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h3>🎓 Education</h3>
+    <table>
+      <tr>
+        <th>Qualification</th>
+        <th>Institution</th>
+        <th>Year</th>
+      </tr>
+      <tr>
+        <td>B.E. Computer Science Engineering</td>
+        <td>Bangalore Institute of Technology</td>
+        <td>[2024-2027] - Present</td>
+      </tr>
+      <tr>
+        <td>Diploma in Computer Science</td>
+        <td>Hindustan Electronics Academy</td>
+        <td>2024</td>
+      </tr>
+      <tr>
+        <td>SSLC (10th)</td>
+        <td>Kairalee Nikethan Education Trust</td>
+        <td>2021</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section-card">
+    <h3>💼 Professional Experience</h3>
+    <ul>
+      <li><strong>Embedded AI & IoT Workshop</strong><br>
+      Attended a 2‑Day 🤖Embedded AI & IoT Workshop at KernelMasters, Bengaluru, focused on hands‑on development using the ⚡Raayan Mini  STM32 (STM32F401RBT6) board📡 for real‑time IoT and AI applications, covering embedded C programming, sensor interfacing, wireless connectivity, and edge‑level data processing.</li>
+      <li><strong>Hindustan Aeronautics Limited<br></strong>
+        During my one-month internship at HAL, I gained hands-on experience developing a [Hospital Management System]. ✈️🛠️
+Collaborating with seasoned professionals enriched my skills and helped me achieve significant milestones. 🤝💼</li>
+    </ul>
+  </section>
+
+  <section class="section-card">
+    <h3>🛠️ Skills & Expertise</h3>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h4>Technical Skills</h4>
+        <ul>
+          <li>HTML, CSS, JavaScript, Python, AI</li>
+          <li>Full-Stack Web Development</li>
+          <li>Agile Project Management (Bitrix24)</li>
+          <li>Network Protocols (RIP, BGP, OSPF)</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h4>Soft Skills</h4>
+        <ul>
+          <li>Client Communication</li>
+          <li>Project Management</li>
+          <li>Creative Problem Solving</li>
+          <li>Time Management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h3>🚀 Key Projects</h3>
+    <ul>
+      <li><strong>Sudoku Solver</strong>: Developed using heuristic search algorithms with detailed technical report and game design strategy.</li>
+      <li><strong>Bitrix24 Agile Presentation</strong>: Comprehensive demo covering project management workflows and advanced features.</li>
+      <li><strong>OSPF Network Documentation</strong>: Complete protocol analysis with CLI configurations and Cisco Packet Tracer simulations.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/suhas-n-m-599431288/" target="_blank" title="LinkedIn"><img src="images/linkedin.jpg" alt="LinkedIn">
+      </a>
+      <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" title="Gmail"><img src="images/gmail.jpg" alt="Gmail">
+      </a>
+      <a href="https://x.com/NM_suhas_Nazare" target="_blank" title="Twitter"><img src="images/twitter.jpg" alt="Twitter">
+      </a>
+      <a href="https://www.instagram.com/suhaskumarnazare/" target="_blank" title="Instagram"><img src="images/instagram.jpg" alt="Instagram">
+      </a>
+      <a href="https://github.com/SuhasNazare" target="_blank" title="Github"><<img src="images/github.png" alt="Github">
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

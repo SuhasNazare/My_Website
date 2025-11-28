@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Suhas N M | Portfolio</title>
+<style>
+body {
+  font-family: 'Georgia', 'Poppins', serif;
+  background: linear-gradient(135deg, #f6f8ff 0%, #d8e4fa 55%, #bfc8e9 100%);
+  color: #232539;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+}
+
+/* Header & Navigation */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px 8px 32px;
+  background: rgba(255,255,255,0.98);
+  border-bottom: 1.5px solid #5c75b9;
+  box-shadow: 0 2px 10px #eaeefa;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.brand {
+  display: flex;
+  align-items: center;
+}
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #adadad;
+  border-radius: 50%;
+  margin-right: 18px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e4eeff;
+  font-weight: bold;
+  color: #354184;
+}
+.brand-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.brand-subtitle {
+  font-size: 0.95rem;
+  color: #678;
+  margin-top: 2px;
+}
+.nav-row {
+  display: flex;
+  align-items: center;
+}
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px #d2dbe5;
+  transition: filter 0.18s, transform 0.18s;
+}
+.social-icons a img:hover {
+  filter: brightness(0.85) drop-shadow(0 0 7px #4267b2cf);
+  transform: scale(1.07);
+}
+/* Menu links with animated frame on hover */
+.nav-links a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #232539;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 6px 14px;
+  position: relative;
+  transition: color 0.25s ease;
+}
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: -8px; right: -8px; bottom: -4px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.25s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #2049ad;
+}
+.nav-links a:hover::before {
+  border-color: #93b2e8;
+  animation: blink-frame 1.5s infinite alternate;
+}
+
+.nav-links a.active::before {
+  border-color: #93b2e8;
+  animation: none;
+}
+
+@keyframes blink-frame {
+  0% {border-color: #a5c0ff;}
+  25% {border-color: #759eea;}
+  50% {border-color: #92afe9;}
+  75% {border-color: #a6c0fc;}
+  100% {border-color: #93b2e8;}
+}
+
+/* Home/Profile slideshow */
+.home-section {
+  display: flex;
+  align-items: center;
+  gap: 46px;
+  width: 100%;
+  padding: 70px 11vw 55px 11vw;
+  min-height: 340px;
+  background: rgba(255,255,255,0.88);
+  border-radius: 0 0 34px 34px;
+  box-shadow: 0 6px 32px #d5def9;
+  margin-top: 10px;
+}
+.profile-photo-slideshow {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 28px #c7d2ed99, 0 2px 16px #aecae822;
+  position: relative;
+  border: 4px solid #e9f1fa;
+}
+.profile-photo-slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top:0; left:0;
+  opacity:0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.profile-photo-slideshow img.show {
+  opacity:1;
+}
+@keyframes zoomInOut {
+  0% {Transform: scale(1);}
+  50% {Transform: scale(1.07);}
+  100% {Transform: scale(1);}
+}
+/* Sections fade & slide effect */
+.section {
+  width: 100%;
+  margin: 0 auto 36px auto;
+  background: linear-gradient(100deg,#fafdff 10%,#eef3f7 100%);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #d5dbf9a4;
+  padding: 40px 9vw 36px 9vw;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.7s cubic-bezier(.46,.03,.52,.96), transform 0.9s cubic-bezier(.45,-0.04,.28,1.18);
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Horizontal colorful line from your previous style */
+.colorful-hr {
+  border: none;
+  height: 5px;
+  border-radius: 4px;
+  background: linear-gradient(90deg,#5195ed 0%,#a2cdfc 30%,#8ef6da 90%);
+  margin: 36px 8vw 36px 8vw;
+  box-shadow: 0 1px 7px #a9c7ff88;
+  opacity: 0.95;
+}
+/* Center footer & social icons below text */
+footer {
+  background: linear-gradient(90deg,#325ebb 20%,#316be6 90%);
+  color: #fff;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  box-shadow: 0 -2px 16px #5370a355;
+}
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top:8px;
+}
+.footer-icons img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px #d2dbe5;
+  transition: filter 0.18s, transform 0.18s;
+}
+.footer-icons img:hover {
+  filter: brightness(0.85) drop-shadow(0 0 7px #4267b2cf);
+  transform: scale(1.07);
+}
+@media(max-width:960px){
+  .home-section {
+    flex-direction: column;
+    padding: 16vw 4vw;
+  }
+  .profile-photo {
+    width: 150px; height: 150px;
+  }
+}
+section {
+  scroll-margin-top: 80px;
+}
+  html {
+  scroll-behavior: smooth;
+}
+</style>
+</head>
+<body>
+<!-- HEADER NAV -->
+<div class="topbar">
+  <div class="brand">
+    <div class="logo">
+    <img src="images/bit.png" alt="Brand Logo" class="brand-logo">
+</div>
+    <div>
+      <span class="brand-title">Suhas N M</span><br>
+      <span class="brand-subtitle">Computer Science Student</span>
+    </div>
+  </div>
+  <div class="nav-row">
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/suhas-n-m-599431288/" target="_blank" title="LinkedIn"><img src="images/linkedin.jpg" alt="LinkedIn"></a>
+      <a href="https://x.com/NM_suhas_Nazare" target="_blank" title="Twitter"><img src="images/twitter.jpg" alt="Twitter"></a>
+      <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" title="Gmail"><img src="images/gmail.jpg" alt="Gmail"></a>
+      <a href="https://www.instagram.com/suhaskumarnazare/" target="_blank" title="Instagram"><img src="images/instagram.jpg" alt="Instagram"></a>
+    </div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#biodata">Biodata</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Profile pt1 -->
+<section id="home" class="home-section section">
+<div class="profile-photo-slideshow">
+  <img src="images/suhas_photo.jpg" alt="Profile" class="show">
+</div>
+<br>
+<div class="about-bio">
+<h1>I'm Suhas N M, a Computer Science Student.</h1>
+<p>Welcome! I am passionate about technology and innovation, focused on AI and web development.<br>I'm currently studying Computer Science at Bangalore Institute of Technology.<br>Scroll down to learn more about my journey, skills, and contacting me.</p>
+</div>
+</section>
+<hr class="colorful-hr">
+
+<!-- About -->
+<section id="about" class="section">
+<h2 class="section-title">About</h2>
+<p>I am Suhas N M, a Computer Science student at Bangalore Institute of Technology. My internship at HAL in Hospital Management Systems helped hone my skills. I also hold an NCC certificate. I aim to leverage my technical skills creatively and ethically.</p>
+</section>
+<hr class="colorful-hr">
+
+<!-- Resume Highlights -->
+<section id="resume" class="section">
+<h2 class="section-title">Resume Highlights</h2>
+<ul>
+<li>B.E. in Computer Science (2024-2027)</li>
+<li>Diploma in Hindustan Electronics Academy (2021-2024)</li>
+<li>Internship at HAL in Hospital Management System</li>
+<li>Skills: Web Dev, Python, AI, MS Office, Photoshop</li>
+<li>Certifications: Embedded AI, HAL Intern, NCC</li>
+</ul>
+<div class="btn-row btn-row-section">
+  <a href="resume.html" class="main-btn">View Full Resume</a>
+</div>
+</section>
+<hr class="colorful-hr">
+
+<!-- Biodata -->
+<section id="biodata" class="section">
+<h2 class="section-title">Bio-data</h2>
+<ul>
+<li>Name: SUHAS N M</li>
+<li>Date of Birth: 26 June 2005</li>
+<li>Gender: Male</li>
+<li>Address: Electronic City</li>
+<li>Contact: +91 7892331225</li>
+<li>Email: sas633111@gmail.com</li>
+<li>Languages Known: English, Kannada, Hindi, Marathi, Tamil, Telugu</li>
+<li>Hobbies: Designing, Music, Web Development</li>
+</ul>
+<div class="btn-row btn-row-section">
+  <a href="biodata.html" class="main-btn">View Bio-data</a>
+</div>
+</section>
+<hr class="colorful-hr">
+
+<!-- Contact -->
+<section id="contact" class="section">
+<h2 class="section-title">Contact</h2>
+<ul>
+<li>Email: sas63311@gmail.com</li>
+<li>Phone: +91 7892331225</li>
+<li>Based in Bangalore, Karnataka</li>
+</ul>
+<p>Feel free to email or call for opportunities, collaborations, or inquiries!</p>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="footer-center">
+  <div>
+    © 2025 Suhas N M | Designed by SUHAS N M
+  </div>
+  <div class="footer-icons" style="margin-top:10px;">
+    <a href="https://www.linkedin.com/in/suhas-n-m-599431288/" target="_blank" title="LinkedIn"><img src="images/linkedin.jpg" alt="LinkedIn"></a>
+    <a href="https://x.com/NM_suhas_Nazare" target="_blank" title="Twitter"><img src="images/twitter.jpg" alt="Twitter"></a>
+    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" title="Gmail"><img src="images/gmail.jpg" alt="Gmail"></a>
+    <a href="https://www.instagram.com/suhaskumarnazare/" target="_blank" title="Instagram"><img src="images/instagram.jpg" alt="Instagram"></a>
+  </div>
+</div>
+</footer>
+<script>
+  // Slideshow for profile
+  const slides = document.querySelectorAll('.profile-photo-slideshow img');
+  let currentIndex = 0;
+  setInterval(() => {
+    slides.forEach((img, idx) => {
+      img.classList.remove('show');
+    });
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add('show');
+  }, 3500);
+
+  // Reveal sections on scroll
+  function reveal() {
+  const revealItems = document.querySelectorAll('.section');
+  const windowHeight = window.innerHeight;
+  revealItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+    // Reveal element if any part of it is within viewport threshold
+    if (rect.top < windowHeight - 100 && rect.bottom > 100) {
+      item.classList.add('visible');
+    } else {
+      item.classList.remove('visible');
+    }
+  });
+}
+
+  window.addEventListener('scroll', reveal);
+  window.addEventListener('load', reveal);
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+const headerHeight = document.querySelector(".topbar").offsetHeight;
+
+// move highlight immediately when a link is clicked
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(a => a.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+// update highlight while scrolling
+window.addEventListener("scroll", () => {
+  const scrollPos = window.scrollY + headerHeight + 1;
+
+  let currentId = "home";
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    if (scrollPos >= top) currentId = section.id;
+  });
+
+  navLinks.forEach(a => {
+    a.classList.toggle("active", a.getAttribute("href") === `#${currentId}`);
+  });
+});
+</script>
+</body>
+</html>
