@@ -223,13 +223,84 @@ footer {
   filter: brightness(0.85) drop-shadow(0 0 7px #4267b2cf);
   transform: scale(1.07);
 }
-@media(max-width:960px){
+@media (max-width: 960px) {
+  .topbar {
+    flex-direction: column;
+    padding: 12px 20px;
+    gap: 10px;
+  }
+  .nav-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .nav-links a {
+    margin: 0;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+  }
   .home-section {
     flex-direction: column;
-    padding: 16vw 4vw;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 20px;
   }
-  .profile-photo {
-    width: 150px; height: 150px;
+  .profile-photo-slideshow {
+    width: 140px;
+    height: 140px;
+  }
+  .about-bio h1 {
+    font-size: 1.5rem;
+  }
+  .about-bio p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .section {
+    padding: 25px 15px;
+    margin-bottom: 20px;
+  }
+  .colorful-hr {
+    margin: 20px 5vw;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  .btn-row {
+    text-align: center;
+  }
+  .main-btn {
+    display: inline-block;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .nav-links {
+    order: -1;
+  }
+  .profile-photo-slideshow {
+    width: 120px;
+    height: 120px;
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+  body {
+    font-size: 0.95rem;
   }
 }
 section {
@@ -407,4 +478,5 @@ window.addEventListener("scroll", () => {
 });
 </script>
 </body>
+
 </html>
